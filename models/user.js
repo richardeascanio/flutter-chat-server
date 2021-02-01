@@ -29,7 +29,7 @@ const UserSchema =  Schema({
 UserSchema.method('toJSON', function() {
     // Extraemos todos los datos que no queremos mostrar
     // ...object -> todo lo demas lo guardamos en una constante que se llama object
-    const { __v, _id, password, online, ...object } = this.toObject();
+    const { __v, _id, password, ...object } = this.toObject();
     object.uid = _id; // cambiamos el nombre (a nivel visual) del _id a uid
     return object;
 });
